@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>기부티켓</title>
+  <meta name="description" content="기부티켓 - 따뜻한 나눔의 시작" />
+  <link rel="icon" type="image/png" href="img/기부티켓.png" />
+  <link rel="apple-touch-icon" href="img/기부티켓.png" />
+  <link rel="stylesheet" href="static/style.css" />
+
+  <script>
+    window.카톡링크 = 'https://vvd.im/gift24';   /* ← 카카오톡 채널/오픈채팅 주소 */
+    window.전화번호 = '01020262467';           /* ← 전화 상담 번호 (숫자/하이픈 자유) */
+  </script>
+  <!-- ===== ↑↑↑ 여기까지만 수정하면 됩니다 ↑↑↑ ===== -->
+</head>
+<body>
+  <!-- ===== 헤더 ===== -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="logo-link" aria-label="기부티켓 홈">
+        <img src="img/logo.png" alt="기부티켓 로고" class="logo-img" />
+      </a>
+      <div class="search-box">
+        <img src="img/검색창.png" alt="검색창" class="search-img" />
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== 본문: 1~7 이미지 ===== -->
+  <main class="content">
+    <!-- 1번 이미지 -->
+    <section class="banner">
+      <img src="img/1.png" alt="기부티켓 이미지 1" class="banner-img" />
+    </section>
+
+    <!-- 1번 / 2번 사이: 전화상담 · 카톡상담 (나중에 링크 연결) -->
+    <section class="consult-row" aria-label="상담 바로가기">
+      <a href="#" class="consult-link" data-action="phone" aria-label="전화상담">
+        <img src="img/전화상담.png" alt="전화상담" class="consult-img" />
+      </a>
+      <a href="#" class="consult-link" data-action="kakao" aria-label="카톡상담">
+        <img src="img/카톡상담.png" alt="카톡상담" class="consult-img" />
+      </a>
+    </section>
+
+    <!-- 2번 이미지 -->
+    <section class="banner">
+      <img src="img/2.png" alt="기부티켓 이미지 2" class="banner-img" />
+    </section>
+
+    <!-- 3번 이미지 -->
+    <section class="banner">
+      <img src="img/3.png" alt="기부티켓 이미지 3" class="banner-img" />
+    </section>
+
+    <!-- 4번 이미지 -->
+    <section class="banner">
+      <img src="img/4.png" alt="기부티켓 이미지 4" class="banner-img" />
+    </section>
+
+    <!-- 5번 이미지 -->
+    <section class="banner">
+      <img src="img/5.png" alt="기부티켓 이미지 5" class="banner-img" />
+    </section>
+
+    <!-- 6번 이미지 -->
+    <section class="banner">
+      <img src="img/6.png" alt="기부티켓 이미지 6" class="banner-img" />
+    </section>
+
+    <!-- 7번 이미지 -->
+    <section class="banner">
+      <img src="img/7.png" alt="기부티켓 이미지 7" class="banner-img" />
+    </section>
+
+    <!-- 7번 하단: 카톡 · 전화 (상담 버튼과 동일 이미지) -->
+    <section class="bottom-contact" aria-label="하단 연락처">
+      <a href="#" class="contact-link" data-action="kakao" aria-label="카카오톡 상담">
+        <img src="img/카톡상담.png" alt="카카오톡 상담" class="contact-img" />
+      </a>
+      <a href="#" class="contact-link" data-action="phone" aria-label="전화 상담">
+        <img src="img/전화상담.png" alt="전화 상담" class="contact-img" />
+      </a>
+    </section>
+  </main>
+
+  <!-- ===== 푸터 ===== -->
+  <footer class="site-footer">
+    <p class="copyright">Copyright © 2026 기부티켓</p>
+  </footer>
+
+  <!-- ===== 우측 하단 카카오톡 플로팅 버튼 ===== -->
+  <!-- href 주소는 위 설정(window.카톡링크)으로 자동 채워집니다 -->
+  <a
+    id="kakaoFloat"
+    href="#"
+    data-action="kakao"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="kakao-float"
+    aria-label="카카오톡 문의하기"
+  >
+    <span class="kakao-float-text">카카오톡 문의하기</span>
+    <img
+      src="img/기부티켓.png"
+      alt="카카오톡 문의하기"
+      loading="eager"
+      decoding="sync"
+    />
+  </a>
+
+  <script src="static/app.js?v=3" defer></script>
+</body>
+</html>

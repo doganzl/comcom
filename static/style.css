@@ -1,0 +1,247 @@
+/* ===== 디자인 토큰 ===== */
+:root {
+  --primary: #f59e0b;
+  --bg: #ffffff;
+  --surface: #fafafa;
+  --text: #1f2937;
+  --muted: #6b7280;
+  --border: #e5e7eb;
+  --radius: 12px;
+  --max-width: 1140px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: -apple-system, 'Segoe UI', system-ui, 'Malgun Gothic', sans-serif;
+  background: var(--surface);
+  color: var(--text);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* ===== 헤더 ===== */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+
+.header-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  padding: var(--space-3) var(--space-4);
+}
+
+.logo-link {
+  flex-shrink: 0;
+  display: inline-flex;
+}
+
+.logo-img {
+  height: 44px;
+  width: auto;
+}
+
+.search-box {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.search-img {
+  max-height: 44px;
+  width: auto;
+}
+
+/* ===== 본문 ===== */
+.content {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  background: var(--bg);
+}
+
+.banner {
+  width: 100%;
+}
+
+.banner-img {
+  width: 100%;
+}
+
+/* 1·2번 사이 상담 버튼 + 7번 하단 연락처 — 좌우 50:50, 여백 없이 꽉 차게 */
+.consult-row,
+.bottom-contact {
+  display: flex;
+  align-items: stretch;
+  gap: 0;
+  padding: 0;
+  margin: 0;
+  background: var(--bg);
+  line-height: 0; /* 이미지 하단 미세 여백 제거 */
+}
+
+.consult-link,
+.contact-link {
+  flex: 1 1 50%;
+  width: 50%;
+  display: block;
+  transition: opacity 0.2s ease;
+}
+
+.consult-link:hover,
+.contact-link:hover {
+  opacity: 0.92;
+}
+
+.consult-img,
+.contact-img {
+  width: 100%;
+  height: auto;
+  max-height: none;
+  display: block;
+}
+
+/* ===== 푸터 ===== */
+.site-footer {
+  background: var(--bg);
+  border-top: 1px solid var(--primary);
+  padding: var(--space-8) var(--space-4);
+  text-align: center;
+}
+
+.copyright {
+  color: var(--muted);
+  font-size: 0.875rem;
+  letter-spacing: 0.02em;
+}
+
+/* ===== 우측 하단 카카오톡 플로팅 버튼 ===== */
+a.kakao-float {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 999999;
+  display: block;
+  text-decoration: none;
+  cursor: pointer;
+
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+a.kakao-float img {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  display: block;
+
+  /* 투명/필터 완전 차단 */
+  opacity: 1 !important;
+  visibility: visible !important;
+  filter: none !important;
+
+  /* 기본 그림자 */
+  box-shadow:
+    0 4px 10px rgba(0, 0, 0, 0.18),
+    0 8px 24px rgba(0, 0, 0, 0.12);
+
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* 말풍선 */
+.kakao-float-text {
+  position: absolute;
+  right: 76px;
+  top: 50%;
+  transform: translateY(-50%) translateX(10px);
+  background: #3b1e1e;
+  color: #fff;
+  padding: 10px 14px;
+  border-radius: 20px;
+  font-size: 14px;
+  white-space: nowrap;
+
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+/* hover 효과 */
+a.kakao-float:hover img {
+  transform: scale(1.08);
+  box-shadow:
+    0 8px 18px rgba(0, 0, 0, 0.25),
+    0 16px 40px rgba(0, 0, 0, 0.28);
+}
+
+a.kakao-float:hover .kakao-float-text {
+  opacity: 1;
+  transform: translateY(-50%) translateX(0);
+}
+
+/* ===== 반응형 (모바일 우선 → 확장) ===== */
+
+/* 태블릿: 로고/검색창만 살짝 키움 (상담·연락처는 항상 50:50 꽉 채움) */
+@media (min-width: 768px) {
+  .logo-img {
+    height: 52px;
+  }
+
+  .search-img {
+    max-height: 48px;
+  }
+}
+
+/* PC: 1140px 컨테이너 기준 최적 크기 */
+@media (min-width: 1024px) {
+  .logo-img {
+    height: 56px;
+  }
+
+  .search-img {
+    max-height: 52px;
+  }
+}
+
+/* 모바일에서 플로팅 버튼 크기 축소 + 말풍선 숨김 */
+@media (max-width: 768px) {
+  a.kakao-float {
+    right: 16px;
+    bottom: 16px;
+  }
+
+  a.kakao-float img {
+    width: 56px;
+    height: 56px;
+  }
+
+  .kakao-float-text {
+    display: none;
+  }
+}
